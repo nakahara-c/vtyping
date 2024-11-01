@@ -1,0 +1,41 @@
+#title {
+    font-family: "Knewave", system-ui;
+    color: white;
+    opacity: 0.8;
+}
+#kpm-view {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#kpm-str {
+    font-size: 20em;
+    margin-top: 1em;
+}
+
+.kpm {
+    font-family: "Knewave", system-ui;
+    font-size: 40em;
+    color: white;
+    
+    background: linear-gradient(to right, #f00 0%, #f80 14.28%, #dd0 28.56%, #0d0 42.85%, #0dd 57.14%, #00f 71.42%, #e0e 85.71%, #f00 100%) 0% center / 200% auto;
+    
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow 1s linear infinite;
+
+    opacity: 0.9;
+}
+@keyframes rainbow {
+    to { background-position-x: 200%; }
+}
+
+@keyframes missType {
+    0% {
+        background-color: beige;
+    }
+}
+.missed {
+    animation: missType 1s forwards;
+}
