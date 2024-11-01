@@ -1,8 +1,6 @@
-'use strict';
-
 const [blackoutTime, lagTime, countUpTime] = [5000, 1000, 7500];
 const kpm = 1000;
-const isDebug = true;
+const isDebug = 1;
 
 const playAudio = (name) => {
     const audio = document.getElementById(`sound-${name}`);

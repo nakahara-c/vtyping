@@ -1,7 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Knewave&family=Reggae+One&display=swap');
+
 #title {
-    font-family: "Knewave", system-ui;
+    font-family: "Reggae One", system-ui;
+    font-size: 3em;
     color: white;
     opacity: 0.8;
+}
+#typing-input {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #kpm-view {
     height: 100vh;
