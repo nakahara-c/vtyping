@@ -2,7 +2,7 @@ import { wordList } from './wordList.js';
 
 const isDebug = 0;
 
-const time = 10;
+const time = 1;
 let typeText, startTime, intervalId;
 let [kpm, typedKeysCount, passedTime] = [0, 0, 0];
 let [timerArray, order, shuffledOrder] = [[], [], []];
@@ -28,7 +28,8 @@ const stopAudio = (name) => {
 
 const blackout = () => {
     if (isDebug) return;
-    kpm = Math.round(typedKeysCount / passedTime * 60);
+    // kpm = Math.round(typedKeysCount / passedTime * 60);
+    kpm = 100;
     const kpmView = document.getElementById("kpm-view");
     setTimeout(() => {
         const elem = document.documentElement;
