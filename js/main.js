@@ -2,6 +2,13 @@ const [blackoutTime, lagTime, countUpTime] = [5000, 1000, 7500];
 const kpm = 1000;
 const isDebug = 1;
 
+const audioList = document.querySelectorAll("audio");
+audioList.forEach(audio => audio.volume = 0.15);
+const volumeSlider = document.getElementById("volume-slider");
+volumeSlider.addEventListener("input", () => {
+    audioList.forEach(audio => audio.volume = volumeSlider.value);
+});
+
 const playAudio = (name) => {
     const audio = document.getElementById(`sound-${name}`);
     audio.play();

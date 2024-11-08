@@ -32,18 +32,25 @@
 
     <main id="main">
         <section class="section my-4">
-            <div id="typing-input" class="input-group input-group-lg w-50 mx-auto my-3">
-                <input type="text" id="typing_area" class="form-control">
-                <audio id="sound-blackout" src="./sounds/blackout.mp3" preload="auto"></audio>
-                <audio id="sound-result1" src="./sounds/result1.mp3" preload="auto"></audio>
-                <audio id="sound-result2" src="./sounds/result2.mp3" preload="auto"></audio>
+            <div id="typing-input" class="w-50 mx-auto my-3">
+                <div id="typing-container" class="input-group input-group-lg position-relative w-100 mx-auto">
+                    <input type="text" id="typing_area" class="form-control">                
+                    <div id="countdown" class="position-absolute text-center">30</div>
+                </div>
             </div>
-
+            <div class="container text-center w-25 mx-auto">
+                <label for="volume-slider" class="form-label">音量</label>
+                <input type="range" class="form-range" id="volume-slider" min="0" max="0.5" step="0.05" value="0.15">
+            </div>
             <div id="kpm-view" class="container text-center" hidden>
                 <span id="kpm-num" class="kpm">0</span><span id="kpm-str" class="kpm" hidden>KPM</span>
             </div>
         </section>
     </main>
+
+    <audio id="sound-blackout" class="audio" src="./sounds/blackout.mp3" preload="auto"></audio>
+    <audio id="sound-result1" class="audio" src="./sounds/result1.mp3" preload="auto"></audio>
+    <audio id="sound-result2" class="audio" src="./sounds/result2.mp3" preload="auto"></audio>
 
     <script src="./js/main.js"></script>
     <script src="./js/typing.js" type="module"></script>

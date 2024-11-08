@@ -12,6 +12,17 @@
     justify-content: center;
     align-items: center;
 }
+#typing-container {
+    position: relative;
+}
+#countdown {
+    font-size: 30em;
+    color: rgba(0, 0, 0, 0.03);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
 #kpm-view {
     height: 100vh;
     display: flex;
