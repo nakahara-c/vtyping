@@ -1,11 +1,18 @@
+'use strict';
 import { wordList } from './wordList.js';
 
 const isDebug = 0;
 
-const time = 1;
+const time = 3;
 let typeText, startTime, intervalId;
 let [kpm, typedKeysCount, passedTime] = [0, 0, 0];
 let [timerArray, order, shuffledOrder] = [[], [], []];
+/* experience
+* inexperience: 0
+* enable: 1
+* disable: 2
+*/
+let experience = window.sessionStorage.getItem('experience') || '0';
 const timer = document.getElementById('timer');
 const typingArea = document.getElementById('typing_area');
 const [blackoutTime, lagTime, countUpTime] = [0, 1000, 2500];
@@ -34,8 +41,13 @@ const blackout = () => {
     setTimeout(() => {
         const elem = document.documentElement;
         const method = elem.requestFullscreen || elem.webkitRequestFullscreen || elem.mozRequestFullScreen || elem.msRequestFullscreen;
-        if (method) method.call(elem);
-
+        if (method && experience === '1') {
+            method.call(elem);
+        } else if (experience === '0') {
+            window.sessionStorage.setItem('experience', '1');
+            experience = '1';
+            method.call(elem);
+        }
         document.body.style.backgroundColor = "black";
         document.getElementById("header").remove();
         document.getElementById("typing-input").style.display = "none";
