@@ -1,7 +1,7 @@
 'use strict';
 import { wordList } from './wordList.js';
 
-const isDebug = 0;
+const isDebug = 1;
 
 const time = 3;
 let typeText, startTime, intervalId;
@@ -13,6 +13,21 @@ let [timerArray, order, shuffledOrder] = [[], [], []];
 * disable: 2
 */
 let experience = window.sessionStorage.getItem('experience') || '0';
+if (experience !== '0') {
+    const prohibitContainer = document.getElementById('prohibit-fullscreen-container');
+    prohibitContainer.hidden = false;
+}
+const prohibitCheckbox = document.getElementById('prohibit-fullscreen');
+prohibitCheckbox.addEventListener('change', () => {
+    if (prohibitCheckbox.checked) {
+        window.sessionStorage.setItem('experience', '2');
+        experience = '2';
+    } else {
+        window.sessionStorage.setItem('experience', '1');
+        experience = '1';
+    }
+});
+
 const timer = document.getElementById('timer');
 const typingArea = document.getElementById('typing_area');
 const [blackoutTime, lagTime, countUpTime] = [0, 1000, 2500];

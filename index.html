@@ -41,6 +41,10 @@
             <div id="audio-input" class="container text-center w-25 mx-auto">
                 <label for="volume-slider" class="form-label">音量</label>
                 <input type="range" class="form-range" id="volume-slider" min="0" max="0.5" step="0.05" value="0">
+                <div id="prohibit-fullscreen-container" class="form-check form-switch" hidden>
+                    <input type="checkbox" class="form-check-input" id="prohibit-fullscreen">
+                    <label for="prohibit-fullscreen" class="form-label">フルスクリーン演出を使用しない</label>
+                </div>
             </div>
             <div id="kpm-view" class="container text-center" hidden>
                 <span id="kpm-num" class="kpm">0</span><span id="kpm-str" class="kpm" hidden>KPM</span>
