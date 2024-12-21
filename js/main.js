@@ -1,9 +1,9 @@
 'use strict';
 import { wordList } from './wordList.js';
 
-const isDebug = 1;
+const isDebug = 0;
 
-const time = 3;
+const time = 1;
 let typeText, startTime, intervalId;
 let [kpm, typedKeysCount, passedTime] = [0, 0, 0];
 let [timerArray, order, shuffledOrder] = [[], [], []];
@@ -51,7 +51,7 @@ const stopAudio = (name) => {
 const blackout = () => {
     if (isDebug) return;
     // kpm = Math.round(typedKeysCount / passedTime * 60);
-    kpm = 100;
+    kpm = 777;
     const kpmView = document.getElementById("kpm-view");
     setTimeout(() => {
         const elem = document.documentElement;
